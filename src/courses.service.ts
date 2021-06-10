@@ -4,9 +4,9 @@ import { JsonConfig } from './json.config';
 
 @Injectable()
 export class CoursesService {
-  jsonConfig: JsonConfig = new JsonConfig;
+  jsonConfig: JsonConfig = new JsonConfig();
     
-    findAll(): Courses[] {   
+    async findAll(): Promise<Courses[]> {   
     return  this.jsonConfig.readJsonFile();
   }
 }
